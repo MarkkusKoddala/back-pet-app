@@ -1,0 +1,61 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="example" id="create-sequence">
+        <createSequence sequenceName="pet_seq" startValue="5" incrementBy="1" />
+    </changeSet>
+
+    <changeSet id="1" author="John Doe">
+    <createTable tableName="pet">
+        <column name="pet_id" type="int" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="pet_name" type="varchar(255)"/>
+        <column name="pet_code" type="int"/>
+        <column name="pet_type" type="varchar(255)"/>
+        <column name="pet_fur_color" type="varchar(255)"/>
+        <column name="pet_country" type="varchar(255)"/>
+        <column name="user_id" type="int"/>
+    </createTable>
+        <insert tableName="pet">
+            <column name="pet_id" value="1"/>
+            <column name="pet_name" value="Kalle"/>
+            <column name="pet_code" value="12223"/>
+            <column name="pet_type" value="Cat"/>
+            <column name="pet_fur_color" value="Yellow"/>
+            <column name="pet_country" value="Estonia"/>
+            <column name="user_id" value="1"/>
+        </insert>
+
+        <insert tableName="pet">
+            <column name="pet_id" value="2"/>
+            <column name="pet_name" value="Jüri"/>
+            <column name="pet_code" value="5444121"/>
+            <column name="pet_type" value="Dog"/>
+            <column name="pet_fur_color" value="Blue"/>
+            <column name="pet_country" value="Latvia"/>
+            <column name="user_id" value="2"/>
+        </insert>
+        <insert tableName="pet">
+            <column name="pet_id" value="3"/>
+            <column name="pet_name" value="Muri"/>
+            <column name="pet_code" value="12323"/>
+            <column name="pet_type" value="Cat"/>
+            <column name="pet_fur_color" value="Yellow"/>
+            <column name="pet_country" value="Lithuania"/>
+            <column name="user_id" value="2"/>
+        </insert>
+        <insert tableName="pet">
+            <column name="pet_id" value="4"/>
+            <column name="pet_name" value="Suri"/>
+            <column name="pet_code" value="12323"/>
+            <column name="pet_type" value="Horse"/>
+            <column name="pet_fur_color" value="Blue"/>
+            <column name="pet_country" value="Estonia"/>
+            <column name="user_id" value="2"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

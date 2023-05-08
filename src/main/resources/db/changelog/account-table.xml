@@ -1,0 +1,39 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="author">
+        <createTable tableName="account">
+            <column name="userid" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(255)">
+            </column>
+            <column name="password" type="VARCHAR(255)">
+            </column>
+            <column name="token" type="uuid" defaultValue="'00000000-0000-0000-0000-000000000000'">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="account">
+            <column name="userid" value="1"/>
+            <column name="username" value="Madis"/>
+            <column name="password" value="madis123"/>
+        </insert>
+
+        <insert tableName="account">
+            <column name="userid" value="2"/>
+            <column name="username" value="Wisercat"/>
+            <column name="password" value="123"/>
+        </insert>
+
+        <insert tableName="account">
+            <column name="userid" value="3"/>
+            <column name="username" value="xxx"/>
+            <column name="password" value="salajane333"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
